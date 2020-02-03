@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         MirrorServlet mirrorRequestsServlet = new MirrorServlet();
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(mirrorRequestsServlet), "/*");
+        context.addServlet(new ServletHolder(mirrorRequestsServlet), "/mirror");
         Server server = new Server(8080);
         server.setHandler(context);
         server.start();
